@@ -1,4 +1,5 @@
 (function () {
+
   // 임시 데이터
   const data = [
     { date: '2024-09-15', content: '테스트1' },
@@ -14,13 +15,12 @@
       ({ ...acc, [v.date]: [...(acc[v.date] || []), v.content] })
     , {}
   );
-
   // pad method
   Number.prototype.pad = function() {
     return this > 9 ? this : '0' + this;
   }
 
-  const makeCalendar = function(date) {
+    const makeCalendar = function(date) {
     const currentYear = date.getFullYear();
     const currentMonth = date.getMonth() + 1;
 
@@ -31,11 +31,13 @@
     const nextDay = Math.ceil(limitDay / 7) * 7;
 
     let htmlDummy = '';
- //전월 처리
+
+    //전월 처리
     for (let i = 0; i < firstDay; i++) {
       htmlDummy += `<div class="noColor"></div>`;
     }
- // 당월처리
+   
+    // 당월처리
     for (let i = 1; i <= lastDay; i++) {
       const dateStr = `${currentYear}-${currentMonth.pad()}-${i.pad()}`;
       htmlDummy += `
@@ -45,7 +47,8 @@
         </div>
       `;
     }
-  //  이후 처리
+  
+    //  이후 처리
     for (let i = limitDay; i < nextDay; i++) {
       htmlDummy += `<div class="noColor"></div>`;
     }
