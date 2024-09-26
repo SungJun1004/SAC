@@ -2,8 +2,8 @@
 
   // 임시 데이터
   const data = [
-    { date: '2024-09-15', content: '테스트1' },
-    { date: '2024-09-03', content: '테스트2' },
+    { date: '2024-09-03', content: '테스트1' },
+    { date: '2024-09-08', content: '테스트2' },
     { date: '2024-09-15', content: '테스트3' },
     { date: '2024-09-26', content: '테스트4' },
     { date: '2024-09-21', content: '테스트5' },
