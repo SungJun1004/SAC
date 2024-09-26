@@ -1,3 +1,4 @@
+
 // 임시 데이터
 const data = [
   { date: '2022-10-15', content: '테스트1' },
@@ -62,11 +63,25 @@ const date = new Date();
 (function () {
   const template = document.createElement('template')
   template.innerHTML = `
-        <style>
-        </style>
-        <div id="root" style="width: 100%; height: 100%;">
-        Hello Custom Widget
-        </div>
+        <div class='rap'>
+    <div class="header">
+       <div class="btn prevDay"></div>
+      <h2 class='dateTitle'></h2>
+      <div class="btn nextDay"></div>
+    </div>
+    
+    <div class="grid dateHead">
+      <div>일</div>
+      <div>월</div>
+      <div>화</div>
+      <div>수</div>
+      <div>목</div>
+      <div>금</div>
+      <div>토</div>
+    </div>
+
+    <div class="grid dateBoard"></div>
+  </div>
       `
   class Main extends HTMLElement {
     constructor () {
