@@ -158,7 +158,7 @@ const makeCalendar = (date) => {
 
       this._root = this._shadowRoot.getElementById('root')
      const date = new Date('2024-09-10');
-     //makeCalendar(date); 
+     makeCalendar(date); 
    
     }
   }
