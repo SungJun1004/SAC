@@ -64,7 +64,7 @@ const date = new Date();
  
 <style>
 .rap {
-  max-width: 820px;
+  max-width: 1280x;
   padding: 0 1.4rem;
   margin-top: .3rem;
 }
