@@ -52,9 +52,13 @@ const makeCalendar = (date) => {
   for (let i = limitDay; i < nextDay; i++) {
     htmlDummy += `<div class="noColor"></div>`;
   }
+   this._dateBoard = this._shadowRoot.getElementById('dateBoard');
+   this._dateBoard..innerHTML = htmlDummy;
+   this._dateTitle = this._shadowRoot.getElementById('dateTitle');
+   this._dateTitle.innerText = `${currentYear}년 ${currentMonth}월`;
   
-  template.querySelector(`.dateBoard`).innerHTML = htmlDummy;
-  template.querySelector(`.dateTitle`).innerText = `${currentYear}년 ${currentMonth}월`;
+  // template.querySelector(`.dateBoard`).innerHTML = htmlDummy;
+  //template.querySelector(`.dateTitle`).innerText = `${currentYear}년 ${currentMonth}월`;
 }
 
   const template = document.createElement('template')
