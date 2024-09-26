@@ -116,14 +116,6 @@ const makeCalendar = (date) => {
  cursor: pointer;
 }
 
-.prevDay {
-  transform: rotate(-135deg);
-}
-
-.nextDay {
-  transform: rotate(45deg);
-}
-
 .dateBoard div p {
   font-weight: normal;
   margin-top: .2rem;
