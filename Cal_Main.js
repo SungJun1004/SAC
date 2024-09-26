@@ -31,11 +31,11 @@
     const nextDay = Math.ceil(limitDay / 7) * 7;
 
     let htmlDummy = '';
-
+ //전월 처리
     for (let i = 0; i < firstDay; i++) {
       htmlDummy += `<div class="noColor"></div>`;
     }
-
+ // 당월처리
     for (let i = 1; i <= lastDay; i++) {
       const dateStr = `${currentYear}-${currentMonth.pad()}-${i.pad()}`;
       htmlDummy += `
@@ -45,7 +45,7 @@
         </div>
       `;
     }
-
+  //  이후 처리
     for (let i = limitDay; i < nextDay; i++) {
       htmlDummy += `<div class="noColor"></div>`;
     }
@@ -55,6 +55,7 @@
 
     this._dateTitle = this._shadowRoot.querySelector('.dateTitle');
     this._dateTitle.innerText = `${currentYear}년 ${currentMonth}월`;
+    
   };
 
   const template = document.createElement('template');
