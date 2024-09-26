@@ -58,7 +58,7 @@ const makeCalendar = (date) => {
   document.querySelector(`.dateBoard`).innerHTML = htmlDummy;
   document.querySelector(`.dateTitle`).innerText = `${currentYear}년 ${currentMonth}월`;
 }
-const date = new Date();
+
   const template = document.createElement('template')
   template.innerHTML = `
 <style>
@@ -172,7 +172,9 @@ const date = new Date();
       this._shadowRoot.appendChild(template.content.cloneNode(true))
 
       this._root = this._shadowRoot.getElementById('root')
-      makeCalendar('2024-09-01');
+     const date = new Date('2024-09-10');
+     makeCalendar(date); 
+   
     }
   }
 
