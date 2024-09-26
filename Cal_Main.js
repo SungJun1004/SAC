@@ -1,6 +1,4 @@
-
 (function () {
- 
 // 임시 데이터
 const data = [
   { date: '2024-09-15', content: '테스트1' },
