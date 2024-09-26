@@ -52,9 +52,6 @@
 
     this._dateBoard = this._shadowRoot.querySelector('.dateBoard');
     this._dateBoard.innerHTML = htmlDummy;
-
-    this._dateTitle = this._shadowRoot.querySelector('.dateTitle');
-    this._dateTitle.innerText = `${currentYear}년 ${currentMonth}월`;
     
   };
 
