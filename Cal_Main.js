@@ -61,7 +61,7 @@ const makeCalendar = (date) => {
 const date = new Date();
   const template = document.createElement('template')
   template.innerHTML = `
-     /* 달력 */
+ 
 <style>
 .rap {
   max-width: 820px;
