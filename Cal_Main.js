@@ -91,6 +91,7 @@
       padding: .6rem .8rem;
       border-radius: .6rem;
       border: 1px solid #eee;
+      text-align: right;
     }
     .noColor {
       background: #eee;
