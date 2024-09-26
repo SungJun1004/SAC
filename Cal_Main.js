@@ -70,7 +70,7 @@
       margin-bottom: .4rem;
     }
     .dateHead div {
-      background: #e31b20;
+      background: #add8e6;
       color: #fff;
       text-align: center;
     }
