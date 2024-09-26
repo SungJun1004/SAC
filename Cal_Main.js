@@ -91,7 +91,7 @@ const date = new Date();
       this._shadowRoot.appendChild(template.content.cloneNode(true))
 
       this._root = this._shadowRoot.getElementById('root')
-      makeCalendar(date);
+     // makeCalendar(date);
     }
   }
 
