@@ -135,12 +135,7 @@ const makeCalendar = (date) => {
 </style>
 
    <div class='rap'>
-    <div class="header">
-       <div class="btn prevDay"></div>
-      <h2 class='dateTitle'></h2>
-      <div class="btn nextDay"></div>
-    </div>
-    
+     
     <div class="grid dateHead">
       <div>일</div>
       <div>월</div>
@@ -163,7 +158,7 @@ const makeCalendar = (date) => {
 
       this._root = this._shadowRoot.getElementById('root')
      const date = new Date('2024-09-10');
-     makeCalendar(date); 
+     //makeCalendar(date); 
    
     }
   }
