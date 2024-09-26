@@ -53,8 +53,8 @@ const makeCalendar = (date) => {
     htmlDummy += `<div class="noColor"></div>`;
   }
   
-  document.querySelector(`.dateBoard`).innerHTML = htmlDummy;
-  document.querySelector(`.dateTitle`).innerText = `${currentYear}년 ${currentMonth}월`;
+  template.querySelector(`.dateBoard`).innerHTML = htmlDummy;
+  template.querySelector(`.dateTitle`).innerText = `${currentYear}년 ${currentMonth}월`;
 }
 
   const template = document.createElement('template')
