@@ -1,4 +1,6 @@
 
+(function () {
+ 
 // 임시 데이터
 const data = [
   { date: '2022-10-15', content: '테스트1' },
@@ -57,10 +59,6 @@ const makeCalendar = (date) => {
   document.querySelector(`.dateTitle`).innerText = `${currentYear}년 ${currentMonth}월`;
 }
 const date = new Date();
-
-
-
-(function () {
   const template = document.createElement('template')
   template.innerHTML = `
         <div class='rap'>
