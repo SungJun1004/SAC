@@ -50,10 +50,10 @@
       htmlDummy += `<div class="noColor"></div>`;
     }
 
-    this._dateBoard = this._shadowRoot.getElementById('dateBoard');
+    this._dateBoard = this._shadowRoot.getElementById('.dateBoard');
     this._dateBoard.innerHTML = htmlDummy;
 
-    this._dateTitle = this._shadowRoot.getElementById('dateTitle');
+    this._dateTitle = this._shadowRoot.getElementById('.dateTitle');
     this._dateTitle.innerText = `${currentYear}년 ${currentMonth}월`;
   };
 
