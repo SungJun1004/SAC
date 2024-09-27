@@ -15,7 +15,7 @@
       ({ ...acc, [v.date]: [...(acc[v.date] || []), v.content] })
     , {}
   );
-  // pad method
+  // pad method 숫자 2자리로 통일
   Number.prototype.pad = function() {
     return this > 9 ? this : '0' + this;
   }
