@@ -142,6 +142,20 @@
       const date = new Date('2024-09-10');
       makeCalendar.call(this, date); 
     }
+
+   onCustomWidgetResize (width, height) {
+      this.render()
+    }
+
+    onCustomWidgetAfterUpdate (changedProps) {
+    }
+
+    onCustomWidgetDestroy () {
+    }
+
+    render () {
+    }
+    
   }
 
   customElements.define('com-sapkorea-sac-sungjun-cal01', Main);
