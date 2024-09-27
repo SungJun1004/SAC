@@ -73,7 +73,7 @@
     }
     .dateHead div {
       background: #B0E0E6;
-      color: #fff;
+      color: #000;
       text-align: center;
     }
     .grid {
