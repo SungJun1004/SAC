@@ -62,7 +62,7 @@
   template.innerHTML = `
   <style>
     .rap {
-      max-width: 1280px;
+      max-width: 1920px;
       padding: 0 1.4rem;
       margin-top: .3rem;
     }
