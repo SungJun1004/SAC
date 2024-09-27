@@ -70,7 +70,7 @@
       margin-bottom: .4rem;
     }
     .dateHead div {
-      background: #add8e6;
+      background: #B0E0E6;
       color: #fff;
       text-align: center;
     }
@@ -87,10 +87,10 @@
     .dateBoard div {
       color: #222;
       font-weight: bold;
-      min-height: 6rem;
+      min-height: 8rem;
       padding: .6rem .8rem;
       border-radius: .6rem;
-      border: 1px solid #eee;
+      border: 1px solid #666;
       text-align: right;
     }
     .noColor {
