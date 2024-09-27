@@ -83,8 +83,7 @@
     }
     .grid div {
       padding: .6rem;
-      font-size: .9rem;
-      cursor: pointer;
+      font-size: 1.1rem;
     }
     .dateBoard div {
       color: #222;
