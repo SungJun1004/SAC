@@ -26,6 +26,11 @@
       "type": "integer",
       "default": 420
     }
+    "CurrentDate": {
+      "type": "string",
+      "default": "",
+      "description": "Current Date"
+    }
   },
   "methods":{},
   "events":{}
