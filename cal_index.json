@@ -26,12 +26,23 @@
       "type": "integer",
       "default": 420
     },
-    "CurrentDate": {
+    "currentDate": {
       "type": "string",
       "default": "",
       "description": "Current Date"
     }
   },
-  "methods":{},
+  "methods":{
+    "setcurrentDate": {
+      "description": "Set Current Date",
+      "parameters": [
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Date"
+        }
+      ]
+    }
+  },
   "events":{}
 }
