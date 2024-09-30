@@ -72,7 +72,7 @@
       margin-bottom: .4rem;
     }
     .dateHead div {
-      background: #B0E0E6;
+      background: #c0d1e2;
       color: #000;
       text-align: center;
     }
@@ -86,7 +86,8 @@
       font-size: 1.1rem;
     }
     .dateBoard div {
-      color: #222;
+      color: #fff;
+      background: #2f6497;
       font-weight: bold;
       min-height: 8rem;
       padding: .6rem .8rem;
