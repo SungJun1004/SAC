@@ -85,15 +85,18 @@
       padding: .6rem;
       font-size: 1.1rem;
     }
-    .dateBoard  {
+    .dateBoard div {
       color: #fff;
-      background: #2f6497;
+     
       font-weight: bold;
       min-height: 8rem;
       padding: .6rem .8rem;
       border-radius: .6rem;
       border: 1px solid #666;
       text-align: right;
+    }
+    .currentColor{
+     background: #2f6497;
     }
     .noColor {
       background: #eee;
