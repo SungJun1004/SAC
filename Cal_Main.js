@@ -86,8 +86,7 @@
       font-size: 1.1rem;
     }
     .dateBoard div {
-      color: #fff;
-     
+      color: #fff;  
       font-weight: bold;
       min-height: 8rem;
       padding: .6rem .8rem;
@@ -137,12 +136,13 @@
   `;
 
   class Main extends HTMLElement {
+    const date = new Date('2024-09-10');
+    
     constructor() {
       super();
       this._shadowRoot = this.attachShadow({ mode: 'open' });
       this._shadowRoot.appendChild(template.content.cloneNode(true));
 
-      const date = new Date('2024-09-10');
       makeCalendar.call(this, date); 
     }
 
@@ -155,8 +155,15 @@
 
     onCustomWidgetDestroy () {
     }
-
+    
+    setCurrentDate (currentDate) {
+      this.date = currentDate;
+      //this.dispatchEvent(new CustomEvent('propertiesChanged', { detail: { properties: { seriesType } } }))
+      this.render()
+    }
+    
     render () {
+       makeCalendar.call(this, date); 
     }
     
   }
