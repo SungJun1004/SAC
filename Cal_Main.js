@@ -156,11 +156,6 @@
     onCustomWidgetDestroy () {
     }
     
-    setCurrentDate (currentDate) {
-      this.date = currentDate;
-      //this.dispatchEvent(new CustomEvent('propertiesChanged', { detail: { properties: { seriesType } } }))
-      this.render()
-    }
     
     render () {
        makeCalendar.call(this, date); 
