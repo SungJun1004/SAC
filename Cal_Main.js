@@ -41,7 +41,7 @@
     for (let i = 1; i <= lastDay; i++) {
       const dateStr = `${currentYear}-${currentMonth.pad()}-${i.pad()}`;
       htmlDummy += `
-        <div>
+        <div class="dateBoard">
           ${i}
            <br><br><br><br>
            <p>${calendarList[dateStr]?.join('</p><p>') || ''}</p>
@@ -85,7 +85,7 @@
       padding: .6rem;
       font-size: 1.1rem;
     }
-    .dateBoard div {
+    .dateBoard  {
       color: #fff;
       background: #2f6497;
       font-weight: bold;
@@ -113,7 +113,6 @@
       padding: 0;
       list-style: none;
       box-sizing: border-box;  
-      font-family: Pretendard;
     }
   </style>
 
