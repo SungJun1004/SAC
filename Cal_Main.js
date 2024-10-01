@@ -137,6 +137,15 @@
     constructor() {
       super();
       this._shadowRoot = this.attachShadow({ mode: 'open' });
+
+    // Create a link element for the CSS file
+    const link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('href', 'https://sungjun1004.github.io/SAC/styles.css'); // Ensure the path is correct
+    
+    // Append the link to the shadow DOM
+    this._shadowRoot.appendChild(link);
+      
       this._shadowRoot.appendChild(template.content.cloneNode(true));
 
       const date = new Date('2024-09-10');
