@@ -32,6 +32,18 @@
       "description": "캘린더의 시작 날짜 (YYYY-MM-DD 형식)"
     }
   },
-  "methods": {},
+  "methods": {
+     "methods": {
+    "getData": {
+      "type": "array",
+      "default": [
+        { "date": "2024-09-03", "content": "테스트1" },
+        { "date": "2024-09-08", "content": "테스트2" },
+        { "date": "2024-09-15", "content": "테스트3" },
+        { "date": "2024-09-26", "content": "테스트4" },
+        { "date": "2024-09-21", "content": "테스트5" }
+      ]
+    }
+  },
   "events": {}
 }
