@@ -107,8 +107,8 @@
       }
     }
     render() {
-      const dateTitle = this._shadowRoot.getElementById('dateTitle');
-      dateTitle.textContent = `${this.date.getFullYear()}-${(this.date.getMonth() + 1).pad()}`;
+    //  const dateTitle = this._shadowRoot.getElementById('dateTitle');
+   //   dateTitle.textContent = `${this.date.getFullYear()}-${(this.date.getMonth() + 1).pad()}`;
       makeCalendar.call(this, this.date);
     }
 
