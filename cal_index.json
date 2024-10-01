@@ -33,6 +33,15 @@
     }
   },
   "methods": {
-   },
+      "setDate": {
+        "description": "Sets the date for the calendar.",
+        "parameters": {
+          "newDate": {
+            "type": "string",
+            "description": "The new date to set."
+          }
+        }
+      }
+    },
   "events": {}
 }
