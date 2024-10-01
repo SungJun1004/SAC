@@ -33,15 +33,6 @@
     }
   },
   "methods": {
-    "setData": {
-      "description": "데이터를 설정합니다.",
-      "parameters": {
-        "data": {
-          "type": "array",
-          "description": "날짜와 내용을 포함한 객체 배열 "
-        }
-      }
-    }
-  },
+   },
   "events": {}
 }
