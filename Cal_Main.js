@@ -127,3 +127,6 @@ class Main extends HTMLElement {
     // 정리 로직
   }
 }
+
+  customElements.define('com-sapkorea-sac-sungjun-cal01', Main);
+})();
