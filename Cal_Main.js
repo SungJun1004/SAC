@@ -136,32 +136,43 @@
   `;
 
   class Main extends HTMLElement {
-  
-    
+ 
+  class Main extends HTMLElement {
     constructor() {
       super();
       this._shadowRoot = this.attachShadow({ mode: 'open' });
       this._shadowRoot.appendChild(template.content.cloneNode(true));
-        const date = new Date('2024-09-10');
-      makeCalendar.call(this, date); 
+      this.date = new Date(this.getAttribute('date') || '2024-09-10');
+      this.render();
     }
 
-   onCustomWidgetResize (width, height) {
-      this.render()
+    static get observedAttributes() {
+      return ['date'];
     }
 
-    onCustomWidgetAfterUpdate (changedProps) {
+    attributeChangedCallback(name, oldValue, newValue) {
+      if (name === 'date') {
+        this.date = new Date(newValue);
+        this.render();
+      }
+    }
+    render() {
+      const dateTitle = this._shadowRoot.getElementById('dateTitle');
+      dateTitle.textContent = `${this.date.getFullYear()}-${(this.date.getMonth() + 1).pad()}`;
+      makeCalendar.call(this, this.date);
     }
 
-    onCustomWidgetDestroy () {
+    onCustomWidgetResize(width, height) {
+      this.render();
     }
-    
-    
-    render () {
-       makeCalendar.call(this, date); 
+
+    onCustomWidgetAfterUpdate(changedProps) {
+      // 변경된 속성에 따라 추가 로직
     }
-    
+
+    onCustomWidgetDestroy() {
+      // 정리 로직
+    }
   }
-
   customElements.define('com-sapkorea-sac-sungjun-cal01', Main);
 })();
