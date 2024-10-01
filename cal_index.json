@@ -25,24 +25,9 @@
     "height": {
       "type": "integer",
       "default": 420
-    },
-    "currentDate": {
-      "type": "string",
-      "default": "",
-      "description": "Current Date"
     }
   },
   "methods":{
-    "setcurrentDate": {
-      "description": "Set Current Date",
-      "parameters": [
-        {
-          "name": "value",
-          "type": "string",
-          "description": "Date"
-        }
-      ]
-    }
-  },
+   },
   "events":{}
 }
