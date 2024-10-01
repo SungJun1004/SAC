@@ -62,61 +62,8 @@
 
   const template = document.createElement('template');
   template.innerHTML = `
-  <style>
-    .rap {
-      max-width: 1920px;
-      padding: 0 1.4rem;
-      margin-top: .3rem;
-    }
-    .dateHead {
-      margin-bottom: .4rem;
-    }
-    .dateHead div {
-      background: #B0E0E6;
-      color: #000;
-      text-align: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-gap: 5px;
-    }
-    .grid div {
-      padding: .6rem;
-      font-size: 1.1rem;
-    }
-    .dateBoard div {
-      color: #222;
-      font-weight: bold;
-      min-height: 8rem;
-      padding: .6rem .8rem;
-      border-radius: .6rem;
-      border: 1px solid #666;
-      text-align: right;
-    }
-    .noColor {
-      background: #eee;
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-    }
-    .dateBoard div p {
-      font-weight: normal;
-      margin-top: .2rem;
-    }
-   
-    * {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      box-sizing: border-box;  
-      font-family: Pretendard;
-    }
-  </style>
-
-  <div class='rap'>
+  
+   <div class='rap'>
     <div class="header">
       <div id="dateTitle"></div>
     </div>
