@@ -7,7 +7,7 @@
     { date: '2024-09-26', content: '테스트4' },
     { date: '2024-09-21', content: '테스트5' },
   ]; 
-
+  
   // 데이터 가공 함수
   const processData = (data) => {
     return data.reduce((acc, v) => {
@@ -15,8 +15,7 @@
       return acc;
     }, {});
   };
-
-  // pad 메소드
+   // pad 메소드
   const pad = (num) => (num > 9 ? num : '0' + num);
 
   const makeCalendar = function(date) {
