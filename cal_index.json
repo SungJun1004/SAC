@@ -38,7 +38,7 @@
       "parameters": {
         "data": {
           "type": "array",
-          "description": "날짜와 내용을 포함한 객체 배열 { "date": "2024-09-21", "content": "테스트5" }"
+          "description": "날짜와 내용을 포함한 객체 배열 "
         }
       }
     }
