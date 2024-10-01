@@ -25,9 +25,13 @@
     "height": {
       "type": "integer",
       "default": 420
+    },
+    "date": {
+      "type": "string",
+      "default": "2024-09-10",
+      "description": "캘린더의 시작 날짜 (YYYY-MM-DD 형식)"
     }
   },
-  "methods":{
-   },
-  "events":{}
+  "methods": {},
+  "events": {}
 }
