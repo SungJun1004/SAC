@@ -61,63 +61,13 @@
   };
 
   const template = document.createElement('template');
+   // CSS 파일을 불러오기
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://sungjun1004.github.io/SAC/styles.css'; // CSS 파일의 URL
+  this._shadowRoot.appendChild(link);
+  
   template.innerHTML = `
-  <style>
-    .rap {
-      max-width: 1920px;
-      padding: 0 1.4rem;
-      margin-top: .3rem;
-    }
-    .dateHead {
-      margin-bottom: .4rem;
-    }
-    .dateHead div {
-      background: #c0d1e2;
-      color: #000;
-      text-align: center;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-gap: 5px;
-    }
-    .grid div {
-      padding: .6rem;
-      font-size: 1.1rem;
-    }
-    .dateBoard div {
-      color: #fff;  
-      font-weight: bold;
-      min-height: 8rem;
-      padding: .6rem .8rem;
-      border-radius: .6rem;
-      border: 1px solid #666;
-      text-align: right;
-    }
-    .currentColor{
-     background: #2f6497;
-    }
-    .noColor {
-      background: #eee;
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-    }
-    .dateBoard div p {
-      font-weight: normal;
-      margin-top: .2rem;
-    }
-   
-    * {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      box-sizing: border-box;  
-    }
-  </style>
-
   <div class='rap'>
     <div class="header">
       <div id="dateTitle"></div>
