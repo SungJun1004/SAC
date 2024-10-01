@@ -136,8 +136,6 @@
   `;
 
   class Main extends HTMLElement {
- 
-  class Main extends HTMLElement {
     constructor() {
       super();
       this._shadowRoot = this.attachShadow({ mode: 'open' });
