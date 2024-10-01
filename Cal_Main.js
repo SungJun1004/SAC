@@ -136,13 +136,13 @@
   `;
 
   class Main extends HTMLElement {
-    const date = new Date('2024-09-10');
+  
     
     constructor() {
       super();
       this._shadowRoot = this.attachShadow({ mode: 'open' });
       this._shadowRoot.appendChild(template.content.cloneNode(true));
-
+        const date = new Date('2024-09-10');
       makeCalendar.call(this, date); 
     }
 
