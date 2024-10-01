@@ -64,7 +64,9 @@
    // CSS 파일을 불러오기
   const link = document.createElement('link');
   link.rel = 'stylesheet';
-  link.href = 'https://sungjun1004.github.io/SAC/styles.css'; // CSS 파일의 URL
+  link.href = 'https://sungjun1004.github.io/SAC/style.css'; // CSS 파일의 URL
+
+  
   this._shadowRoot.appendChild(link);
   
   template.innerHTML = `
