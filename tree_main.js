@@ -3,11 +3,11 @@ const getScriptPromisify = (src) => {
         $.getScript(src, resolve);
     });
 };
+
 const parseMetadata = (data) => {
     const dimensionsMap = {};
     const dimensions = [];
 
-    // 데이터 배열을 통해 차원 정보를 수집
     data.forEach(item => {
         const dimension = item.dimensions_0;
 
@@ -15,17 +15,14 @@ const parseMetadata = (data) => {
             const { id, label, parentId } = dimension;
             const dimObj = { id, label, parentId };
 
-            // 차원 객체를 맵에 추가
             dimensionsMap[id] = dimObj;
 
-            // 루트 노드인 경우 dimensions 배열에 추가
             if (!parentId) {
                 dimensions.push(dimObj);
             }
         }
     });
 
-    // 자식 노드 관계 설정
     dimensions.forEach(dim => {
         dim.children = Object.values(dimensionsMap).filter(child => child.parentId === dim.id);
     });
@@ -76,11 +73,11 @@ const parseMetadata = (data) => {
                 return;
             }
 
-            const { data } = dataBinding;  // 데이터 배열을 가져옵니다.
-            const { dimensions } = parseMetadata(data); // 메타데이터를 파싱합니다.
+            const { data } = dataBinding;  
+            const { dimensions } = parseMetadata(data); 
 
-            this._treeContainer.innerHTML = ''; // 이전 내용을 비웁니다.
-            const ul = this._generateTree(dimensions); // 트리 생성
+            this._treeContainer.innerHTML = ''; 
+            const ul = this._generateTree(dimensions); 
             this._treeContainer.appendChild(ul);
         }
 
@@ -89,13 +86,11 @@ const parseMetadata = (data) => {
             data.forEach(item => {
                 const li = document.createElement('li');
 
-                // 체크박스 추가
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.id = item.id;
                 checkbox.value = item.label;
-                
-                // 체크박스와 라벨을 연결
+
                 const label = document.createElement('label');
                 label.htmlFor = item.id;
                 label.textContent = item.label || item.id;
@@ -104,15 +99,16 @@ const parseMetadata = (data) => {
                 li.appendChild(label);
 
                 if (item.children && item.children.length > 0) {
-                    const childUl = this._generateTree(item.children); // 자식 요소 생성
-                    li.appendChild(childUl); // 자식 리스트 추가
-                }
+                    const childUl = this._generateTree(item.children);
+                    li.appendChild(childUl);
+                } 
+                // 자식 노드가 없는 경우에는 아무것도 하지 않음
 
                 li.addEventListener('click', (e) => {
                     e.stopPropagation();
                     if (item.children && item.children.length > 0) {
                         const childUl = li.querySelector('ul');
-                        childUl.classList.toggle('hidden'); // 자식 리스트 토글
+                        childUl.classList.toggle('hidden');
                     }
                 });
 
@@ -124,5 +120,6 @@ const parseMetadata = (data) => {
 
     customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
 })();
+
 
 
