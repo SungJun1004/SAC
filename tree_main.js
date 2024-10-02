@@ -28,6 +28,9 @@ var parseMetadata = metadata => {
                 cursor: pointer;
                 margin: 5px 0;
             }
+            .hidden {
+                display: none;
+            }
         </style>
         <div id="root" style="width: 100%; height: 100%;">
         </div>
@@ -90,5 +93,5 @@ var parseMetadata = metadata => {
         }
     }
 
-    customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
+    customElements.define('com-sap-sac-exercise-username-main', Main);
 })();
