@@ -92,14 +92,14 @@ const parseMetadata = (data) => {
 
                 const toggleButton = document.createElement('span');
                 toggleButton.className = 'toggle-button';
-                toggleButton.textContent = item.children && item.children.length > 0 ? '▶' : ''; // 기본적으로 펼침 아이콘
+                toggleButton.textContent = item.children && item.children.length > 0 ? '+' : ''; // 기본적으로 펼침 아이콘
                 toggleButton.onclick = (e) => {
                     e.stopPropagation();
                     if (item.children && item.children.length > 0) {
                         const childUl = li.querySelector('ul');
                         if (childUl) {
                             childUl.classList.toggle('hidden');
-                            toggleButton.textContent = childUl.classList.contains('hidden') ? '▶' : '▼'; // 아이콘 변경
+                            toggleButton.textContent = childUl.classList.contains('hidden') ? '+' : '-'; // 아이콘 변경
                         }
                     }
                 };
