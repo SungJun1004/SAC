@@ -92,14 +92,14 @@ const parseMetadata = (data) => {
 
                 const toggleButton = document.createElement('span');
                 toggleButton.className = 'toggle-button';
-                toggleButton.textContent = item.children && item.children.length > 0 ? '+' : ''; // 기본적으로 펼침 아이콘
+                toggleButton.textContent = item.children && item.children.length > 0 ? '▶' : ''; // 기본적으로 펼침 아이콘
                 toggleButton.onclick = (e) => {
                     e.stopPropagation();
                     if (item.children && item.children.length > 0) {
                         const childUl = li.querySelector('ul');
                         if (childUl) {
                             childUl.classList.toggle('hidden');
-                            toggleButton.textContent = childUl.classList.contains('hidden') ? '+' : '-'; // 아이콘 변경
+                            toggleButton.textContent = childUl.classList.contains('hidden') ? '▶' : '▼'; // 아이콘 변경
                         }
                     }
                 };
@@ -108,6 +108,19 @@ const parseMetadata = (data) => {
                 checkbox.type = 'checkbox';
                 checkbox.id = item.id;
                 checkbox.value = item.label;
+
+                // 체크박스 이벤트 리스너 추가
+                checkbox.addEventListener('change', (e) => {
+                    this.dispatchEvent(new CustomEvent('checkboxChanged', {
+                        detail: {
+                            id: item.id,
+                            label: item.label,
+                            checked: e.target.checked,
+                        },
+                        bubbles: true,
+                        composed: true,
+                    }));
+                });
 
                 const label = document.createElement('label');
                 label.htmlFor = item.id;
@@ -128,6 +141,7 @@ const parseMetadata = (data) => {
         }
     }
 
- customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
+  customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
 })();
+
 
