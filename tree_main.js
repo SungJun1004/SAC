@@ -155,11 +155,14 @@ const parseMetadata = (data) => {
             const checkboxes = this._treeContainer.querySelectorAll('input[type="checkbox"]');
             checkboxes.forEach(checkbox => {
                 checkbox.checked = false; // 체크박스 해제
-        });
-        
-      getSelected() {
-            return this.selectedItems.join(','); // 배열을 문자열로 변환하여 반환
+            }
         }
+            
+      getSelected() {
+            return this.selectedItems;
+           //return this.selectedItems.join(','); // 배열을 문자열로 변환하여 반환
+        }  
+     
     }
 
   customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
