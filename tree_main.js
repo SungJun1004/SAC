@@ -149,9 +149,9 @@ const parseMetadata = (data) => {
             return ul;
         }
 
-        // 선택된 체크박스의 ID 배열을 반환하는 메소드
+       // 선택된 체크박스의 ID 배열을 반환하는 메소드
         getSelected() {
-            return this.selectedItems;
+            return { selectedIds: this.selectedItems }; // 배열을 객체로 감싸서 반환
         }
     }
 
