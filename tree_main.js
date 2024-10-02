@@ -57,6 +57,7 @@ const parseMetadata = (data) => {
             this._shadowRoot = this.attachShadow({ mode: 'open' });
             this._shadowRoot.appendChild(template.content.cloneNode(true));
             this._treeContainer = this._shadowRoot.getElementById('treeContainer');
+            this.selectedItems = []; // 선택된 체크박스를 추적하기 위한 배열
         }
 
         onCustomWidgetResize(width, height) {
@@ -68,7 +69,7 @@ const parseMetadata = (data) => {
         }
 
         onCustomWidgetDestroy() {
-            // 필요한 경우 추가 정리 작업 수행
+            // 필요 시 정리 작업 수행
         }
 
         async render() {
@@ -77,11 +78,11 @@ const parseMetadata = (data) => {
                 return;
             }
 
-            const { data } = dataBinding;  
-            const { dimensions } = parseMetadata(data); 
+            const { data } = dataBinding;
+            const { dimensions } = parseMetadata(data);
 
-            this._treeContainer.innerHTML = ''; 
-            const ul = this._generateTree(dimensions); 
+            this._treeContainer.innerHTML = '';
+            const ul = this._generateTree(dimensions);
             this._treeContainer.appendChild(ul);
         }
 
@@ -92,14 +93,14 @@ const parseMetadata = (data) => {
 
                 const toggleButton = document.createElement('span');
                 toggleButton.className = 'toggle-button';
-                toggleButton.textContent = item.children && item.children.length > 0 ? '+' : ''; // 기본적으로 펼침 아이콘
+                toggleButton.textContent = item.children && item.children.length > 0 ? '+' : '';
                 toggleButton.onclick = (e) => {
                     e.stopPropagation();
                     if (item.children && item.children.length > 0) {
                         const childUl = li.querySelector('ul');
                         if (childUl) {
                             childUl.classList.toggle('hidden');
-                            toggleButton.textContent = childUl.classList.contains('hidden') ? '+' : '-'; // 아이콘 변경
+                            toggleButton.textContent = childUl.classList.contains('hidden') ? '+' : '-';
                         }
                     }
                 };
@@ -120,6 +121,13 @@ const parseMetadata = (data) => {
                         bubbles: true,
                         composed: true,
                     }));
+
+                    // 선택된 체크박스 관리
+                    if (e.target.checked) {
+                        this.selectedItems.push(item.id);
+                    } else {
+                        this.selectedItems = this.selectedItems.filter(id => id !== item.id);
+                    }
                 });
 
                 const label = document.createElement('label');
@@ -133,15 +141,18 @@ const parseMetadata = (data) => {
                 if (item.children && item.children.length > 0) {
                     const childUl = this._generateTree(item.children);
                     li.appendChild(childUl);
-                } 
+                }
 
                 ul.appendChild(li);
             });
             return ul;
         }
+
+        // 선택된 체크박스의 ID 배열을 반환하는 메소드
+        getSelected() {
+            return this.selectedItems;
+        }
     }
 
   customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
 })();
-
-
