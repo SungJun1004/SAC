@@ -41,6 +41,10 @@ const parseMetadata = (data) => {
             .hidden {
                 display: none;
             }
+            .toggle-button {
+                cursor: pointer;
+                margin-right: 5px;
+            }
         </style>
         <div id="root" style="width: 100%; height: 100%;">
             <div id="treeContainer"></div>
@@ -86,6 +90,20 @@ const parseMetadata = (data) => {
             data.forEach(item => {
                 const li = document.createElement('li');
 
+                const toggleButton = document.createElement('span');
+                toggleButton.className = 'toggle-button';
+                toggleButton.textContent = item.children && item.children.length > 0 ? '▶' : ''; // 기본적으로 펼침 아이콘
+                toggleButton.onclick = (e) => {
+                    e.stopPropagation();
+                    if (item.children && item.children.length > 0) {
+                        const childUl = li.querySelector('ul');
+                        if (childUl) {
+                            childUl.classList.toggle('hidden');
+                            toggleButton.textContent = childUl.classList.contains('hidden') ? '▶' : '▼'; // 아이콘 변경
+                        }
+                    }
+                };
+
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
                 checkbox.id = item.id;
@@ -95,6 +113,7 @@ const parseMetadata = (data) => {
                 label.htmlFor = item.id;
                 label.textContent = item.label || item.id;
 
+                li.appendChild(toggleButton);
                 li.appendChild(checkbox);
                 li.appendChild(label);
 
@@ -102,15 +121,6 @@ const parseMetadata = (data) => {
                     const childUl = this._generateTree(item.children);
                     li.appendChild(childUl);
                 } 
-                // 자식 노드가 없는 경우에는 아무것도 하지 않음
-
-                li.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    if (item.children && item.children.length > 0) {
-                        const childUl = li.querySelector('ul');
-                        childUl.classList.toggle('hidden');
-                    }
-                });
 
                 ul.appendChild(li);
             });
@@ -118,8 +128,6 @@ const parseMetadata = (data) => {
         }
     }
 
-    customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
+ customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
 })();
-
-
 
