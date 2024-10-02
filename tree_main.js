@@ -4,6 +4,7 @@ const getScriptPromisify = (src) => {
     });
 };
 
+
 const parseMetadata = (data) => {
     const dimensionsMap = {};
     const dimensions = [];
