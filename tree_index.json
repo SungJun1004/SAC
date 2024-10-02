@@ -1,0 +1,48 @@
+{
+  "eula": "",
+  "vendor": "SAP Korea",
+  "license": "",
+  "id": "com.sapkorea.sac.sungjun.tree01",
+  "version": "1.0.0",
+  "name": "트리선택예시",
+  "icon": "",
+  "newInstancePrefix": "CustomWidget-Tree",
+  "description": "A custom widget for selecting items in a tree structure",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-sapkorea-sac-sungjun-tree01",
+      "url": "https://sungjun1004.github.io/SAC/tree_main.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "width": {
+      "type": "integer",
+      "default": 600
+    },
+    "height": {
+      "type": "integer",
+      "default": 420
+    }
+  },
+  "methods": {},
+  "events": {},
+  "dataBindings": {
+    "dataBinding": {
+      "feeds": [
+        {
+          "id": "dimensions",
+          "description": "Dimensions",
+          "type": "dimension"
+        },
+        {
+          "id": "measures",
+          "description": "Measures",
+          "type": "mainStructureMember"
+        }
+      ]
+    }
+  }
+}
