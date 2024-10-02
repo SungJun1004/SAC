@@ -30,12 +30,7 @@
   "methods": {},
   "events": {
     "checkboxChanged": {
-      "description": "Triggered when a checkbox is checked or unchecked",
-      "parameters": {
-        "id": "string",
-        "label": "string",
-        "checked": "boolean"
-      }
+      "description": "Triggered when a checkbox is checked or unchecked"
     }
   },
   "dataBindings": {
