@@ -11,11 +11,10 @@ const parseMetadata = (data) => {
     // 데이터 배열을 통해 차원 정보를 수집
     data.forEach(item => {
         const dimension = item.dimensions_0;
-        const measure = item.measures_0;
 
         if (dimension) {
             const { id, label, parentId } = dimension;
-            const dimObj = { id, label, parentId, measures: measure };
+            const dimObj = { id, label, parentId };
 
             // 차원 객체를 맵에 추가
             dimensionsMap[id] = dimObj;
@@ -90,15 +89,32 @@ const parseMetadata = (data) => {
             const ul = document.createElement('ul');
             data.forEach(item => {
                 const li = document.createElement('li');
-                li.textContent = item.label || item.id;
+
+                // 체크박스 추가
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = item.id;
+                checkbox.value = item.label;
+                
+                // 체크박스와 라벨을 연결
+                const label = document.createElement('label');
+                label.htmlFor = item.id;
+                label.textContent = item.label || item.id;
+
+                li.appendChild(checkbox);
+                li.appendChild(label);
 
                 if (item.children && item.children.length > 0) {
-                    li.appendChild(this._generateTree(item.children)); // 자식 요소 생성
+                    const childUl = this._generateTree(item.children); // 자식 요소 생성
+                    li.appendChild(childUl); // 자식 리스트 추가
                 }
 
                 li.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    li.querySelector('ul').classList.toggle('hidden'); // 자식 리스트 토글
+                    if (item.children && item.children.length > 0) {
+                        const childUl = li.querySelector('ul');
+                        childUl.classList.toggle('hidden'); // 자식 리스트 토글
+                    }
                 });
 
                 ul.appendChild(li);
@@ -109,3 +125,5 @@ const parseMetadata = (data) => {
 
     customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
 })();
+
+
