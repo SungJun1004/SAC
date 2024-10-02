@@ -93,5 +93,5 @@ var parseMetadata = metadata => {
         }
     }
 
-    customElements.define('com-sap-sac-exercise-username-main', Main);
+    customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
 })();
