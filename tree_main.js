@@ -46,6 +46,11 @@ const parseMetadata = (data) => {
                 cursor: pointer;
                 margin-right: 5px;
             }
+            #treeContainer {
+                max-height: 400px; /* 원하는 최대 높이로 조정 */
+                overflow-y: auto;  /* 수직 스크롤 활성화 */
+            }
+            
         </style>
         <div id="root" style="width: 100%; height: 100%;">
             <div id="treeContainer"></div>
