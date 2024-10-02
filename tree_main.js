@@ -93,7 +93,7 @@ const parseMetadata = (data) => {
 
                 const toggleButton = document.createElement('span');
                 toggleButton.className = 'toggle-button';
-                toggleButton.textContent = item.children && item.children.length > 0 ? '+' : '';
+                toggleButton.textContent = item.children && item.children.length > 0 ? '-' : '';
                 toggleButton.onclick = (e) => {
                     e.stopPropagation();
                     if (item.children && item.children.length > 0) {
