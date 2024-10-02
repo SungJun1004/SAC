@@ -31,7 +31,10 @@
     "getSelected": {
       "description": "Returns the selected checkbox IDs.",
       "returnType": "sting"
-    }
+    },
+  "deselectAll": {
+    "description": "Deselects all checkboxes."
+  }
   },
   "events": {
     "checkboxChanged": {
