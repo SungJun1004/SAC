@@ -28,7 +28,16 @@
     }
   },
   "methods": {},
-  "events": {},
+  "events": {
+    "checkboxChanged": {
+      "description": "Triggered when a checkbox is checked or unchecked",
+      "parameters": {
+        "id": "string",
+        "label": "string",
+        "checked": "boolean"
+      }
+    }
+  },
   "dataBindings": {
     "dataBinding": {
       "feeds": [
