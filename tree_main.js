@@ -107,5 +107,5 @@ const parseMetadata = (data) => {
         }
     }
 
-    customElements.define('com-sap-sac-sungjun-tree01', Main);
+    customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
 })();
