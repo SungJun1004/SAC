@@ -30,7 +30,7 @@
   "methods": {
     "getSelected": {
       "description": "Returns the selected checkbox IDs.",
-      "returnType": "sting"
+      "returnType": "string"
     },
   "deselectAll": {
     "description": "Deselects all checkboxes."
