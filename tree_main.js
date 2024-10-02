@@ -80,6 +80,9 @@ const parseMetadata = (data) => {
 
         async render() {
             const dataBinding = this.dataBinding;
+            //필터 적용 체크
+            this.dataBindings.getDataBinding().getLinkedAnalysis().removeFilters();
+
             if (!dataBinding || dataBinding.state !== 'success') {
                 return;
             }
