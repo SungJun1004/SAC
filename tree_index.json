@@ -30,7 +30,7 @@
   "methods": {
     "getSelected": {
       "description": "Returns the selected checkbox IDs.",
-      "returnType": "object"
+      "returnType": "sting"
     }
   },
   "events": {
