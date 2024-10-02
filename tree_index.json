@@ -27,7 +27,12 @@
       "default": 420
     }
   },
-  "methods": {},
+  "methods": {
+    "getSelected": {
+      "description": "Returns the selected checkbox IDs.",
+      "returnType": "Array"
+    }
+  },
   "events": {
     "checkboxChanged": {
       "description": "Triggered when a checkbox is checked or unchecked"
