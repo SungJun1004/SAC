@@ -3,7 +3,6 @@ const getScriptPromisify = (src) => {
         $.getScript(src, resolve);
     });
 };
-
 const parseMetadata = (data) => {
     const dimensionsMap = {};
     const dimensions = [];
