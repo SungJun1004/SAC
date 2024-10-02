@@ -4,7 +4,6 @@ const getScriptPromisify = (src) => {
     });
 };
 
-
 const parseMetadata = (data) => {
     const dimensionsMap = {};
     const dimensions = [];
@@ -149,21 +148,21 @@ const parseMetadata = (data) => {
             });
             return ul;
         }
-         // 선택된 체크박스를 모두 해제하는 메소드
+
+        // 선택된 체크박스를 모두 해제하는 메소드
         deselectAll() {
             this.selectedItems = []; // 선택된 아이템 배열 비우기
             const checkboxes = this._treeContainer.querySelectorAll('input[type="checkbox"]');
             checkboxes.forEach(checkbox => {
                 checkbox.checked = false; // 체크박스 해제
-            }
+            });
         }
-            
-      getSelected() {
-            return this.selectedItems;
-           //return this.selectedItems.join(','); // 배열을 문자열로 변환하여 반환
-        }  
-     
+        
+        // 선택된 체크박스의 ID 배열을 반환하는 메소드
+        getSelected() {
+            return this.selectedItems; // 배열 반환
+        }
     }
 
-  customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
+    customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
 })();
