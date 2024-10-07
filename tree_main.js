@@ -72,6 +72,7 @@ class Main extends HTMLElement {
     }
 
     onCustomWidgetResize(width, height) {
+        this.height = height; // height를 설정
         this.render();
        // this.adjustTreeContainerHeight();
     }
@@ -101,11 +102,11 @@ class Main extends HTMLElement {
         
         const maxheight1 = this.height - 10;
         // 트리 컨테이너의 최대 높이를 설정
-    this._treeContainer.style.maxHeight = `${maxheight1}px`;
+        const maxheight1 = (this.height && !isNaN(this.height)) ? this.height - 10 : 200; // 기본값 설정
+        this._treeContainer.style.maxHeight = `${maxheight1}px`;
     
-    // maxHeight 값 확인
-    console.log(`maxHeight1: ${maxheight1}`);
-    console.log(`maxHeight2: ${this._treeContainer.style.maxHeight}`);
+        console.log(`this.height: ${this.height}`);
+        console.log(`maxHeight1: ${maxheight1}`);
     }
   
  _generateTree(data) {
