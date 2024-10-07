@@ -68,6 +68,7 @@ const parseMetadata = (data) => {
 
         onCustomWidgetResize(width, height) {
             this.render();
+           // this.adjustTreeContainerHeight();
         }
 
         onCustomWidgetAfterUpdate(changedProps) {
@@ -91,8 +92,27 @@ const parseMetadata = (data) => {
             this._treeContainer.innerHTML = '';
             const ul = this._generateTree(dimensions);
             this._treeContainer.appendChild(ul);
+            // 데이터에 따라 트리 컨테이너의 높이를 조정합니다.
+            this.adjustTreeContainerHeight();
         }
-
+    adjustTreeContainerHeight() {
+        const dataBinding = this.dataBinding;
+        
+        if (!dataBinding || dataBinding.state !== 'success') {
+            return;
+        }
+    
+        const { data } = dataBinding;
+        const rowCount = data.length; // 데이터의 행 수를 가져옵니다.
+        
+        // 각 행의 평균 높이를 설정합니다.
+        const averageRowHeight = 20; // 평균 높이 (필요에 따라 조정)
+        
+        // 트리 컨테이너의 최대 높이를 계산합니다.
+        const maxHeight = Math.min(rowCount * averageRowHeight, 400); // 최대 높이 설정
+        this._treeContainer.style.maxHeight = `${maxHeight}px`;
+    }
+        
         _generateTree(data) {
             const ul = document.createElement('ul');
             data.forEach(item => {
