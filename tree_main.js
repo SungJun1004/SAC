@@ -118,7 +118,7 @@ class Main extends HTMLElement {
     const maxDepth = this._getMaxDepth(data); // 트리의 최대 깊이를 가져옵니다.
 
     const maxHeight = Math.min(rowCount * averageRowHeight, this.height) ; // 최대 높이 설정
-    //const maxHeight =  this.height - 10;
+    const maxHeight =  this.height - 100;
     this._treeContainer.style.maxHeight = `${maxHeight}px`;
 
     console.log(`rowCount: ${rowCount}`);
