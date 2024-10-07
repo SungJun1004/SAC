@@ -4,6 +4,7 @@ const getScriptPromisify = (src) => {
     });
 };
 
+
 // 바인딩된 데이터를 트리구조에 맞추어 파싱 처리 
 const parseMetadata = (data) => {
 const dimensionsMap = {};
