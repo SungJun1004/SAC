@@ -72,8 +72,9 @@ class Main extends HTMLElement {
                
     }
      connectedCallback() {
-        this.height = this.clientHeight;
-        console.log(`Root height: ${this.clientHeight}px`);
+        const rootElement = this._shadowRoot.getElementById('root');
+        this.height = rootElement.clientHeight; // root의 높이를 설정
+        console.log(`Root height: ${this.height}px`);
     }
    
     
