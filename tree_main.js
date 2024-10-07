@@ -4,6 +4,7 @@ const getScriptPromisify = (src) => {
     });
 };
 
+// 바인딩된 데이터를 트리구조에 맞추어 파싱 처리 
 const parseMetadata = (data) => {
     const dimensionsMap = {};
     const dimensions = [];
@@ -81,7 +82,8 @@ const parseMetadata = (data) => {
 
         async render() {
             const dataBinding = this.dataBinding;
-           
+
+            // 데이터 바인딩 성공인 경우만 실행
             if (!dataBinding || dataBinding.state !== 'success') {
                 return;
             }
@@ -92,6 +94,7 @@ const parseMetadata = (data) => {
             this._treeContainer.innerHTML = '';
             const ul = this._generateTree(dimensions);
             this._treeContainer.appendChild(ul);
+            
             // 데이터에 따라 트리 컨테이너의 높이를 조정합니다.
             this.adjustTreeContainerHeight();
         }
