@@ -114,11 +114,11 @@ class Main extends HTMLElement {
     const { data } = dataBinding;
     const rowCount = this._getRowCount(data); // 데이터의 깊이를 기반으로 행 수를 가져옵니다.
     
-    const averageRowHeight = 24; // 평균 높이
+    const averageRowHeight = 30; // 평균 높이
     const maxDepth = this._getMaxDepth(data); // 트리의 최대 깊이를 가져옵니다.
 
    // const maxHeight = Math.min(rowCount * averageRowHeight, this.height) -100 ; // 최대 높이 설정
-     const maxHeight =  this.height - 10;
+    const maxHeight =  this.height - 10;
     this._treeContainer.style.maxHeight = `${maxHeight}px`;
     }
 
@@ -147,76 +147,76 @@ _getMaxDepth(data, depth = 1) {
      data.forEach(item => {
      const li = document.createElement('li');
 
-            const toggleButton = document.createElement('span');
-            toggleButton.className = 'toggle-button';
-            toggleButton.textContent = item.children && item.children.length > 0 ? '-' : '';
-            toggleButton.onclick = (e) => {
-                e.stopPropagation();
-                if (item.children && item.children.length > 0) {
-                    const childUl = li.querySelector('ul');
-                    if (childUl) {
-                        childUl.classList.toggle('hidden');
-                        toggleButton.textContent = childUl.classList.contains('hidden') ? '+' : '-';
-                    }
-                }
-            };
+    const toggleButton = document.createElement('span');
+    toggleButton.className = 'toggle-button';
+    toggleButton.textContent = item.children && item.children.length > 0 ? '-' : '';
+    toggleButton.onclick = (e) => {
+        e.stopPropagation();
+        if (item.children && item.children.length > 0) {
+            const childUl = li.querySelector('ul');
+            if (childUl) {
+                childUl.classList.toggle('hidden');
+                toggleButton.textContent = childUl.classList.contains('hidden') ? '+' : '-';
+            }
+        }
+    };
 
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.id = item.id;
             checkbox.value = item.label;
 
-            // 체크박스 이벤트 리스너 추가
-            checkbox.addEventListener('change', (e) => {
-                this.dispatchEvent(new CustomEvent('checkboxChanged', {
-                    detail: {
-                        id: item.id,
-                        label: item.label,
-                        checked: e.target.checked,
-                    },
-                    bubbles: true,
-                    composed: true,
-                }));
+        // 체크박스 이벤트 리스너 추가
+        checkbox.addEventListener('change', (e) => {
+            this.dispatchEvent(new CustomEvent('checkboxChanged', {
+                detail: {
+                    id: item.id,
+                    label: item.label,
+                    checked: e.target.checked,
+                },
+                bubbles: true,
+                composed: true,
+            }));
 
-                // 선택된 체크박스 관리
-                if (e.target.checked) {
-                    this.selectedItems.push(item.id);
-                } else {
-                    this.selectedItems = this.selectedItems.filter(id => id !== item.id);
-                }
-            });
-
-            const label = document.createElement('label');
-            label.htmlFor = item.id;
-            label.textContent = item.label || item.id;
-
-            li.appendChild(toggleButton);
-            li.appendChild(checkbox);
-            li.appendChild(label);
-
-            if (item.children && item.children.length > 0) {
-                const childUl = this._generateTree(item.children);
-                li.appendChild(childUl);
+            // 선택된 체크박스 관리
+            if (e.target.checked) {
+                this.selectedItems.push(item.id);
+            } else {
+                this.selectedItems = this.selectedItems.filter(id => id !== item.id);
             }
-
-            ul.appendChild(li);
         });
-        return ul;
-    }
 
-    // 선택된 체크박스를 모두 해제하는 메소드
-    deselectAll() {
-        this.selectedItems = []; // 선택된 아이템 배열 비우기
-        const checkboxes = this._treeContainer.querySelectorAll('input[type="checkbox"]');
-        checkboxes.forEach(checkbox => {
-            checkbox.checked = false; // 체크박스 해제
-        });
-    }
-    
-    // 선택된 체크박스의 ID 배열을 반환하는 메소드
-    getSelected() {
-        return this.selectedItems; // 배열 반환
-    }
+        const label = document.createElement('label');
+        label.htmlFor = item.id;
+        label.textContent = item.label || item.id;
+
+        li.appendChild(toggleButton);
+        li.appendChild(checkbox);
+        li.appendChild(label);
+
+        if (item.children && item.children.length > 0) {
+            const childUl = this._generateTree(item.children);
+            li.appendChild(childUl);
+        }
+
+        ul.appendChild(li);
+    });
+    return ul;
+}
+
+// 선택된 체크박스를 모두 해제하는 메소드
+deselectAll() {
+    this.selectedItems = []; // 선택된 아이템 배열 비우기
+    const checkboxes = this._treeContainer.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false; // 체크박스 해제
+    });
+}
+
+// 선택된 체크박스의 ID 배열을 반환하는 메소드
+getSelected() {
+    return this.selectedItems; // 배열 반환
+}
 }
 
 customElements.define('com-sapkorea-sac-sungjun-tree01', Main);
