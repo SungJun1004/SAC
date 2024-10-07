@@ -114,7 +114,7 @@ const parseMetadata = (data) => {
         const averageRowHeight = 24; // 평균 높이 (필요에 따라 조정)
         
         // 트리 컨테이너의 최대 높이를 계산합니다.
-        const maxHeight = Math.min(rowCount * averageRowHeight, this.height) + 12; // 최대 높이 설정
+        const maxHeight = Math.min(rowCount * averageRowHeight, this.height) + 20; // 최대 높이 설정
         this._treeContainer.style.maxHeight = `${maxHeight}px`;
     }
         
