@@ -101,7 +101,7 @@ const parseMetadata = (data) => {
         }
 
         
-    adjustTreeContainerHeight() {
+        adjustTreeContainerHeight() {
         const dataBinding = this.dataBinding;
         
         if (!dataBinding || dataBinding.state !== 'success') {
@@ -109,15 +109,34 @@ const parseMetadata = (data) => {
         }
     
         const { data } = dataBinding;
-        const rowCount = data.length; // 데이터의 행 수를 가져옵니다.
+        const rowCount = this._getRowCount(data); // 데이터의 깊이를 기반으로 행 수를 가져옵니다.
         
-        // 각 행의 평균 높이를 설정합니다.
-        const averageRowHeight = 24; // 평균 높이 (필요에 따라 조정)
-        
-        // 트리 컨테이너의 최대 높이를 계산합니다.
-        const maxHeight = Math.min(rowCount * averageRowHeight, this.height) - 12; // 최대 높이 설정
+        const averageRowHeight = 24; // 평균 높이
+        const maxDepth = this._getMaxDepth(data); // 트리의 최대 깊이를 가져옵니다.
+    
+        const maxHeight = Math.min(rowCount * averageRowHeight, this.height); // 최대 높이 설정
         this._treeContainer.style.maxHeight = `${maxHeight}px`;
+        }
+
+    // 데이터의 깊이를 기반으로 행 수를 계산하는 함수
+    _getRowCount(data) {
+        return data.reduce((count, item) => {
+            count += 1; // 현재 항목 카운트
+            if (item.children) {
+                count += this._getRowCount(item.children); // 자식 항목 재귀적으로 카운트
+            }
+            return count;
+        }, 0);
     }
+
+    // 최대 깊이를 계산하는 함수
+    _getMaxDepth(data, depth = 1) {
+        if (!data || data.length === 0) return depth;
+    
+        const depths = data.map(item => this._getMaxDepth(item.children, depth + 1));
+        return Math.max(...depths);
+    }
+        
         
         _generateTree(data) {
             const ul = document.createElement('ul');
