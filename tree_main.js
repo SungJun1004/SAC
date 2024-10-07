@@ -74,6 +74,8 @@ class Main extends HTMLElement {
         const resizeObserver = new ResizeObserver(() => {
             this.height = this.clientHeight; // 현재 요소의 높이 설정
         });
+          console.log('컴포넌트가 DOM에 추가되었습니다.');
+        
      }
     onCustomWidgetResize(width, height) {
         this.height = height; // height를 설정
