@@ -48,9 +48,12 @@ return { dimensions };
             cursor: pointer;
             margin-right: 5px;
         }
-        #treeContainer {
-            max-height: 420px; /* 원하는 최대 높이로 조정 */
+       #treeContainer {
+            max-height: 420px; /* 최대 높이 조정 */
             overflow-y: auto;  /* 수직 스크롤 활성화 */
+            overflow-x: hidden; /* 수평 스크롤 비활성화 */
+            padding-bottom: 10px; /* 하단 패딩 추가 */
+            box-sizing: border-box; /* 패딩이 전체 높이에 포함되도록 설정 */
         }
         
     </style>
