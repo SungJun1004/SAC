@@ -88,6 +88,8 @@ class Main extends HTMLElement {
     }
 
     onCustomWidgetAfterUpdate(changedProps) {
+        this.height = this.clientHeight; // 현재 요소의 높이 설정
+        console.log(`Resize event triggered: width=${width}, height=${height}`);
         this.render();
     }
 
