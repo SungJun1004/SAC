@@ -71,10 +71,11 @@ class Main extends HTMLElement {
         this.selectedItems = []; // 선택된 체크박스를 추적하기 위한 배열
                
     }
-    onInitialization() {
-            this.height = this.clientHeight;
+     connectedCallback() {
+        this.height = this.clientHeight;
         console.log(`Root height: ${this.clientHeight}px`);
-        }
+    }
+   
     
     onCustomWidgetResize(width, height) {
         this.height = height; // height를 설정
