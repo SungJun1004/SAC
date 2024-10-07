@@ -75,16 +75,8 @@ class Main extends HTMLElement {
         const rootElement = this._shadowRoot.getElementById('root');
         this.height = rootElement.clientHeight; // root의 높이를 설정
         console.log(`Root height: ${this.height}px`);
-         
-         
-         this.dataSource = this.getDataSource();
-        if (this.dataSource) {
-            console.log('Data source is available:', this.dataSource);
-            // 데이터 소스와 함께 작업 수행
-        } else {
-            console.error('Data source is not available.');
-        }
-         
+ 
+    
     }
    
     
