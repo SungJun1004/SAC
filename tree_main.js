@@ -69,6 +69,8 @@ class Main extends HTMLElement {
         this._shadowRoot.appendChild(template.content.cloneNode(true));
         this._treeContainer = this._shadowRoot.getElementById('treeContainer');
         this.selectedItems = []; // 선택된 체크박스를 추적하기 위한 배열
+        this.height = this.clientHeight; // 현재 요소의 높이 설정
+        
     }
     connectedCallback() {
         const resizeObserver = new ResizeObserver(() => {
