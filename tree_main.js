@@ -121,6 +121,11 @@ class Main extends HTMLElement {
     const maxHeight = Math.min(rowCount * averageRowHeight, this.height) ; // 최대 높이 설정
     //const maxHeight =  this.height - 10;
     this._treeContainer.style.maxHeight = `${maxHeight}px`;
+
+    console.log('rowCount: ${rowCount} ');
+    console.log('MaxDepth: ${maxDepth}px');
+    console.log('maxHeight: ${maxHeight}px');
+        
     }
 
 // 데이터의 깊이를 기반으로 행 수를 계산하는 함수
