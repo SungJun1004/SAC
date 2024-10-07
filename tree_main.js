@@ -121,9 +121,9 @@ class Main extends HTMLElement {
     //const maxHeight =  this.height - 10;
     this._treeContainer.style.maxHeight = `${maxHeight}px`;
 
-    console.log('rowCount: ${rowCount} ');
-    console.log('MaxDepth: ${maxDepth}px');
-    console.log('maxHeight: ${maxHeight}px');
+    console.log(`rowCount: ${rowCount}`);
+    console.log(`MaxDepth: ${maxDepth}px`);
+    console.log(`maxHeight: ${maxHeight}px`);
         
     }
 
