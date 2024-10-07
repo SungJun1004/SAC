@@ -49,7 +49,7 @@ return { dimensions };
             margin-right: 5px;
         }
        #treeContainer {
-            max-height: 420px; /* 최대 높이 조정 */
+            max-height: 410px; /* 최대 높이 조정 */
             overflow-y: auto;  /* 수직 스크롤 활성화 */
             overflow-x: hidden; /* 수평 스크롤 비활성화 */
             padding-bottom: 10px; /* 하단 패딩 추가 */
