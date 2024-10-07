@@ -69,16 +69,13 @@ class Main extends HTMLElement {
         this._shadowRoot.appendChild(template.content.cloneNode(true));
         this._treeContainer = this._shadowRoot.getElementById('treeContainer');
         this.selectedItems = []; // 선택된 체크박스를 추적하기 위한 배열
-        this.height = this.clientHeight; // 현재 요소의 높이 설정
+        const rootElement = this._shadowRoot.getElementById('root');
+        const rootHeight = rootElement.clientHeight;
+        console.log(`Root height: ${rootHeight}px`);
+        this.height = rootHeight; // 현재 요소의 높이 설정
         
     }
-    connectedCallback() {
-        const resizeObserver = new ResizeObserver(() => {
-            this.height = this.clientHeight; // 현재 요소의 높이 설정
-        });
-          console.log('컴포넌트가 DOM에 추가되었습니다.');
-        
-     }
+   
     onCustomWidgetResize(width, height) {
         this.height = height; // height를 설정
         console.log(`Resize event triggered: width=${width}, height=${height}`);
@@ -88,8 +85,7 @@ class Main extends HTMLElement {
     }
 
     onCustomWidgetAfterUpdate(changedProps) {
-        this.height = this.getHeight; // 현재 요소의 높이 설정
-        console.log(`Resize event triggered: width=${width}, height=${height}`);
+     
         this.render();
     }
 
