@@ -38,8 +38,9 @@ const parseMetadata = (data) => {
             ul {
                 list-style-type: none;
                 padding-left: 20px;
+                margin: 0; /* 기본 margin 제거 */
                 font-size: 12px; /* 원하는 폰트 사이즈로 조정 */
-            }
+                }
             .hidden {
                 display: none;
             }
