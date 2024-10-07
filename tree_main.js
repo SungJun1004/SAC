@@ -100,7 +100,7 @@ class Main extends HTMLElement {
         const ul = this._generateTree(dimensions);
         this._treeContainer.appendChild(ul);
         
-        const maxheight1 = this.height - 10;
+     
         // 트리 컨테이너의 최대 높이를 설정
         const maxheight1 = (this.height && !isNaN(this.height)) ? this.height - 10 : 200; // 기본값 설정
         this._treeContainer.style.maxHeight = `${maxheight1}px`;
