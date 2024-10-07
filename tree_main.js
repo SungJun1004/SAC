@@ -99,10 +99,12 @@ class Main extends HTMLElement {
         const ul = this._generateTree(dimensions);
         this._treeContainer.appendChild(ul);
         
-        // 데이터에 따라 트리 컨테이너의 높이를 조정합니다.
-            this._treeContainer.style.maxHeight = `${this.height-100}px`;
-
-        console.log(`${maxJeight : this._treeContainer.style.maxHeight}`);
+        
+        // 트리 컨테이너의 최대 높이를 설정
+    this._treeContainer.style.maxHeight = `${this.height - 100}px`;
+    
+    // maxHeight 값 확인
+    console.log(`maxHeight: ${this._treeContainer.style.maxHeight}`);
     }
   
  _generateTree(data) {
