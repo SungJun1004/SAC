@@ -73,6 +73,8 @@ class Main extends HTMLElement {
 
     onCustomWidgetResize(width, height) {
         this.height = height; // height를 설정
+        console.log(`Resize event triggered: width=${width}, height=${height}`);
+        
         this.render();
        // this.adjustTreeContainerHeight();
     }
