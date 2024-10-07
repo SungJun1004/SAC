@@ -101,6 +101,8 @@ class Main extends HTMLElement {
         
         // 데이터에 따라 트리 컨테이너의 높이를 조정합니다.
             this._treeContainer.style.maxHeight = `${this.height-100}px`;
+
+        console.log(`${maxJeight : this._treeContainer.style.maxHeight}`);
     }
   
  _generateTree(data) {
